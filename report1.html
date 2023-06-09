@@ -47,11 +47,19 @@
         const axisHelper = new THREE.AxisHelper(5); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
         
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();
+        var texture = textureLoader.load("2k_earth_daymap.jpg");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+        
         //地球
         var geometry = new THREE.SphereGeometry(3, 64, 32)
         var material = new THREE.MeshPhongMaterial({color: 0x0000ff,wireframe:true});
         var earth = new THREE.Mesh(geometry, material);
+        var earth = new THREE.Mesh(geometry, mat);
         earth.position.set(0, 0, 0); //位置を指定
+       
         
         // 月
         var geometry = new THREE.SphereGeometry(1, 64, 32);
