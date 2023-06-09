@@ -25,7 +25,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 20);
+        camera.position.set(0, 0, 40);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -70,7 +70,7 @@
           requestAnimationFrame(update);
 
            // 箱を回転させる
-          earth.rotation.x += 0.01;
+          earth.rotation.y += 0.01;
         }
       }
     </script>
